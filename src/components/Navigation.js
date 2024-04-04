@@ -1,5 +1,7 @@
 import { ethers } from 'ethers'
-
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap')
+</style>
 const Navigation = ({ account, setAccount }) => {
     const connectHandler = async () => {
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -8,18 +10,20 @@ const Navigation = ({ account, setAccount }) => {
     }
 
     return (
+
         <nav>
             <div className='nav__brand'>
-                <h1>Dappazon</h1>
+                <h1>TRIPORA</h1>
             </div>
 
             <input
                 type="text"
                 className="nav__search"
+                placeholder='Search Product Here'
             />
 
             {account ? (
-                <button
+                <button 
                     type="button"
                     className='nav__connect'
                 >
@@ -31,7 +35,7 @@ const Navigation = ({ account, setAccount }) => {
                     className='nav__connect'
                     onClick={connectHandler}
                 >
-                    Connect
+                    Connect Wallet
                 </button>
             )}
 
